@@ -1,25 +1,31 @@
-// app/(auth)/recuperar-senha/page.js
+// src/app/(auth)/recuperar-senha/page.js
+'use client';
 
+import { Mail } from 'lucide-react'; // Importamos o ícone de carta
+
+// Importamos os componentes reutilizáveis
+import { AuthInput } from '../../components/AuthInput';
 import { AuthButton } from '../../components/AuthButton';
 
 export default function RecuperarSenhaPage() {
   return (
     <>
-      <h1 className="text-3xl font-bold mb-4 text-center">Recuperar senha</h1>
+      <h1 className="text-3xl font-bold mb-2 text-center text-gray-800 dark:text-white">
+        Recuperar senha
+      </h1>
       
-      <form className="space-y-6 mt-8">
-        <div className="relative">
-          <input 
-            type="email"
-            placeholder="Digite seu endereço de e-mail"
-            className="w-full rounded-lg py-3 px-4 
-                       bg-gray-100 border border-gray-300 text-gray-900
-                       dark:bg-gray-800 dark:border-gray-600 dark:text-white
-                       focus:outline-none focus:border-purple-500 dark:focus:border-purple-400
-                       dark:focus:bg-gray-900"
-            name="email"
-          />
-        </div>
+      <p className="text-center text-gray-600 dark:text-gray-400 mb-8 text-sm">
+        Digite seu e-mail para receber o link de redefinição.
+      </p>
+      
+      <form className="space-y-6">
+        <AuthInput 
+          icon={Mail} // Ícone consistente com o resto do app
+          type="email"
+          placeholder="Digite seu endereço de e-mail"
+          name="email"
+        />
+        
         <AuthButton>Enviar</AuthButton>
       </form>
     </>
