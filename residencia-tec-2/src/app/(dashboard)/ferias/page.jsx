@@ -5,51 +5,51 @@ import { CustomCalendar } from '../../components/CustomCalendarToferias';
 
 export default function FeriasPage() {
   
-  // 1. Estado para o Histórico (começa com dados fictícios)
+ 
   const [history, setHistory] = useState([
     { ano: '2024', periodo: '10/jan - 24/jan', dias: 14, status: 'Tiradas' },
     { ano: '2023', periodo: '05/ago - 19/ago', dias: 14, status: 'Tiradas' },
   ]);
 
-  // 2. Estado para as datas selecionadas no calendário
+  
   const [selectedRange, setSelectedRange] = useState({ start: null, end: null });
 
-  // 3. Função chamada quando clica em "Solicitar Férias"
+  
   const handleSolicitarFerias = () => {
     const { start, end } = selectedRange;
 
-    // Validação simples
+    
     if (!start || !end) {
       alert("Por favor, selecione uma data de início e fim no calendário.");
       return;
     }
 
-    // Calcular número de dias
+    
     const diffTime = Math.abs(end - start);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1; // +1 para contar o dia de início
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1; 
 
-    // Formatar datas (ex: 25/nov)
+    
     const options = { day: '2-digit', month: 'short' };
     const startStr = start.toLocaleDateString('pt-BR', options).replace('.', '');
     const endStr = end.toLocaleDateString('pt-BR', options).replace('.', '');
     const yearStr = start.getFullYear().toString();
 
-    // Criar novo objeto
+   
     const newEntry = {
       ano: yearStr,
       periodo: `${startStr} - ${endStr}`,
       dias: diffDays,
-      status: 'Em análise' // Status padrão para novos pedidos
+      status: 'Em análise' 
     };
 
-    // Adicionar ao topo da lista (Spread operator)
+    
     setHistory([newEntry, ...history]);
 
-    // Feedback visual (opcional)
+    
     alert(`Férias solicitadas com sucesso! (${diffDays} dias)`);
   };
 
-  // Função de cor (mantida)
+  
   const getStatusColor = (status) => {
     if (status === 'Em análise') return 'text-red-400 font-medium';
     if (status === 'Tiradas') return 'text-green-500 font-medium';
@@ -59,7 +59,7 @@ export default function FeriasPage() {
   return (
     <div className="max-w-5xl mx-auto pb-10">
       
-      {/* Banner */}
+      
       <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 shadow-sm mb-10 border border-gray-200 dark:border-gray-700">
         <h2 className="font-bold text-lg text-black dark:text-white mb-2">Saldo de férias</h2>
         <p className="text-center text-xl text-gray-700 dark:text-gray-300">
@@ -70,7 +70,7 @@ export default function FeriasPage() {
       <div className="flex flex-col lg:flex-row gap-12 items-start mb-12">
         
         <div className="flex-1 w-full flex justify-center lg:justify-start">
-            {/* Passamos a função para receber as datas do filho */}
+           
             <CustomCalendar onRangeSelect={setSelectedRange} />
         </div>
 
@@ -84,7 +84,7 @@ export default function FeriasPage() {
                     Vender férias
                 </button>
 
-                {/* Botão com evento onClick */}
+                
                 <button 
                   onClick={handleSolicitarFerias}
                   className="w-full py-3 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700 text-white font-bold text-lg transition-transform transform hover:-translate-y-1 shadow-md"

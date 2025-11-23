@@ -28,11 +28,11 @@ export function Clock() {
 
   return (
     <div className="text-center mb-8">
-      {/* Hora Grande */}
+      
       <h2 className="text-6xl font-extrabold text-purple-800 dark:text-purple-300">
         {timeFormatter.format(date)}
       </h2>
-      {/* Data por extenso */}
+      
       <p className="text-gray-500 dark:text-gray-400 capitalize mt-2">
         {dateFormatter.format(date)}
       </p>

@@ -25,25 +25,25 @@ export function Sidebar() {
   ];
 
   return (
-    // Ajustei o gradiente aqui para ficar mais parecido com o seu print
+   
     <aside className="w-64 min-h-screen flex flex-col bg-gradient-to-b from-purple-600 to-indigo-800 text-white">
       
     
       <div className="p-8 flex flex-col items-center">
-        <div className="relative w-40 h-16 mb-4"> {/* Container para controlar o tamanho */}
+        <div className="relative w-40 h-16 mb-4"> 
           <Image
             src="/webpower-logo.png" 
             alt="WebPower Logo"
-            fill // Preenche o container
+            fill 
             className="object-contain" 
             priority
           />
         </div>
         <ThemeSwitcher /> 
       </div>
-      {/* -------------------------------- */}
+      
 
-      {/* Navegação */}
+      
       <nav className="flex-1 py-4 space-y-2">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
@@ -66,7 +66,6 @@ export function Sidebar() {
         })}
       </nav>
 
-      {/* Botão Sair */}
       <div className="p-6">
         <Link 
           href="/login" 

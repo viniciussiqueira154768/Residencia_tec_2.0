@@ -1,9 +1,9 @@
 // src/app/(auth)/recuperar-senha/page.js
 'use client';
 
-import { Mail } from 'lucide-react'; // Importamos o ícone de carta
+import { Mail } from 'lucide-react'; 
 
-// Importamos os componentes reutilizáveis
+
 import { AuthInput } from '../../components/AuthInput';
 import { AuthButton } from '../../components/AuthButton';
 
@@ -20,7 +20,7 @@ export default function RecuperarSenhaPage() {
       
       <form className="space-y-6">
         <AuthInput 
-          icon={Mail} // Ícone consistente com o resto do app
+          icon={Mail} 
           type="email"
           placeholder="Digite seu endereço de e-mail"
           name="email"

@@ -3,11 +3,11 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Agora o calendário aceita uma função "onRangeSelect" para avisar o pai
+
 export function CustomCalendar({ onRangeSelect }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   
-  // Estado para o intervalo de datas
+  
   const [range, setRange] = useState({ start: null, end: null });
 
   const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -29,47 +29,47 @@ export function CustomCalendar({ onRangeSelect }) {
   const emptyDays = Array.from({ length: firstDayIndex });
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-  // Lógica de clique inteligente
+  
   const handleDayClick = (day) => {
     const clickedDate = new Date(year, month, day);
     let newRange = { ...range };
 
-    // 1. Se não tem início, ou se já tem início e fim (começar de novo)
+   
     if (!range.start || (range.start && range.end)) {
       newRange = { start: clickedDate, end: null };
     } 
-    // 2. Se já tem início e clicou numa data posterior (definir fim)
+    
     else if (clickedDate >= range.start) {
       newRange = { start: range.start, end: clickedDate };
     } 
-    // 3. Se clicou numa data ANTERIOR ao início (inverter)
+    
     else {
       newRange = { start: clickedDate, end: range.start };
     }
 
     setRange(newRange);
     
-    // Avisa a página pai sobre a mudança
+    
     if (onRangeSelect) {
       onRangeSelect(newRange);
     }
   };
 
-  // Verifica o estilo do dia (Início, Fim ou Meio)
+  
   const getDayStyle = (day) => {
     const date = new Date(year, month, day);
     const start = range.start;
     const end = range.end;
 
-    // Comparações ignorando horas
+    
     const isSameDay = (d1, d2) => d1 && d2 && d1.toDateString() === d2.toDateString();
     
     if (isSameDay(date, start) || isSameDay(date, end)) {
-      return 'bg-purple-600 text-white font-bold shadow-md scale-105 z-10'; // Bolinha Roxa (Pontas)
+      return 'bg-purple-600 text-white font-bold shadow-md scale-105 z-10'; 
     }
     
     if (start && end && date > start && date < end) {
-      return 'bg-purple-100 text-purple-700 rounded-none'; // Preenchimento (Meio)
+      return 'bg-purple-100 text-purple-700 rounded-none'; 
     }
 
     return 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700';
