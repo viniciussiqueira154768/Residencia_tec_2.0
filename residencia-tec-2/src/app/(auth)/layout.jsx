@@ -73,8 +73,12 @@ export default function AuthLayout({ children }) {
       
       
       <div 
-        className="relative flex flex-1 flex-col justify-between p-8 bg-gradient-to-br from-purple-100 via-purple-200 to-indigo-200 dark:from-purple-600 dark:via-purple-700 dark:to-indigo-800 overflow-hidden" // Essencial para as curvas decorativas não vazarem
-        style={{ flexBasis: '45%' }}
+        className="relative flex flex-1 flex-col justify-between p-8 overflow-hidden" 
+        style={{ flexBasis: '45%',
+        backgroundImage: 'url("/fundo.png")', 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'}}
       >
         
         <div className="flex items-center space-x-4 z-10">
@@ -83,7 +87,7 @@ export default function AuthLayout({ children }) {
           <Image
             src="/bandeira-brasil.png" 
             alt="Bandeira do Brasil"
-            width={28}
+            width={40}
             height={28}
             className="rounded-full shadow-md"
           />

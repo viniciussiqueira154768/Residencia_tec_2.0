@@ -9,11 +9,11 @@ import { PasswordInput } from '../../components/PasswordInput';
 import { AuthButton } from '../../components/AuthButton';
 
 export default function LoginPage() {
-  const router = useRouter(); // 2. Inicializar o roteador
+  const router = useRouter(); 
 
   
   const handleLogin = (e) => {
-    e.preventDefault(); // Impede a página de recarregar
+    e.preventDefault(); 
     
     
     console.log("Fazendo login...");
