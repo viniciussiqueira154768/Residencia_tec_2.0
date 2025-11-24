@@ -1,11 +1,10 @@
-// src/app/(auth)/layout.js
+
 'use client';
 
 import Link from 'next/link';
 import Image from 'next/image'; 
 import { usePathname } from 'next/navigation';
 import { ThemeSwitcher } from '../components/ThemeSwitcher';
-
 
 function AuthNavigation() {
   const pathname = usePathname();
@@ -65,13 +64,11 @@ function AuthNavigation() {
   );
 }
 
-
 export default function AuthLayout({ children }) {
   return (
     
     <main className="flex min-h-screen">
-      
-      
+           
       <div 
         className="relative flex flex-1 flex-col justify-between p-8 bg-gradient-to-br from-purple-100 via-purple-200 to-indigo-200 dark:from-purple-600 dark:via-purple-700 dark:to-indigo-800 overflow-hidden" // Essencial para as curvas decorativas não vazarem
         style={{ flexBasis: '45%' }}
@@ -81,26 +78,22 @@ export default function AuthLayout({ children }) {
           <ThemeSwitcher />
           
           <Image
-            src="/bandeira-brasil.png" 
-            alt="Bandeira do Brasil"
+            src="/language.svg" 
+            alt="Pt-BR"
             width={28}
             height={28}
             className="rounded-full shadow-md"
           />
         </div>
-        
-        
+            
         <AuthNavigation /> 
-
-        
+      
         <div className="absolute -bottom-16 -right-16 w-48 h-48 border-[1.5rem] border-purple-300/30 dark:border-white/5 rounded-full" />
         <div className="absolute -bottom-8 -right-8 w-32 h-32 border-8 border-purple-300/30 dark:border-white/5 rounded-full" />
-        
-        
+                
         <div className="absolute -top-16 -right-16 w-48 h-48 border-[1.5rem] border-purple-300/30 dark:border-white/5 rounded-full" />
         
       </div>
-
       
       <div 
         className="flex flex-1 flex-col justify-center items-center p-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
@@ -110,15 +103,14 @@ export default function AuthLayout({ children }) {
         
           <div className="mb-8 text-center">
             <Image
-              src="/webpower-logo.png" 
+              src="/logo.svg" 
               alt="WebPower Logo"
-              width={220} 
-              height={110}
+              width={165} 
+              height={127}
               priority
               className="mx-auto"
             />
           </div>
-          
           
           {children}
         </div>

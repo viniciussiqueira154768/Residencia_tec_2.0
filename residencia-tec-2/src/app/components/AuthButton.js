@@ -4,8 +4,9 @@ export function AuthButton({ children }) {
   return (
     <button 
       type="submit"
-      className="w-full text-white font-bold py-3 rounded-lg shadow-lg transition duration-200 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 dark:from-purple-600 dark:to-indigo-700 dark:hover:from-purple-700 dark:hover:to-indigo-800"
+      className="rounded-[29px] font-poppins font-bold text-[#8C00C6] text-[24px] w-[430px] h-[60px] bg-gradient-to-r from-[#D3A1F8] to-[#F6DDFB] shadow-md mx-auto block relative overflow-hidden"
     >
+      <div className="absolute inset-0 opacity-20 mix-blend-overlay"></div>
       {children}
     </button>
   );
