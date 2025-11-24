@@ -8,10 +8,13 @@ import { PasswordInput } from '../../components/PasswordInput';
 import { AuthButton } from '../../components/AuthButton';
 
 export default function LoginPage() {
+
   const router = useRouter();
 
   const handleLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+    console.log("Fazendo login...");
+
     router.push('/ponto');
   };
 

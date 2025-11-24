@@ -1,4 +1,3 @@
-// src/app/(auth)/cadastro/page.js
 'use client';
 
 import { User, Mail } from 'lucide-react';
