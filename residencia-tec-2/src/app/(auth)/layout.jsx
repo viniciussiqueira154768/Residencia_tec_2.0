@@ -16,7 +16,6 @@ function AuthNavigation() {
     '/conta-criada',
     '/sessao-encerrada'
   ];
-
   
   if (backButtonPages.includes(pathname)) {
     return (
@@ -82,15 +81,9 @@ export default function AuthLayout({ children }) {
           <ThemeSwitcher />
           
           <Image
-<<<<<<< HEAD
             src="/language.svg" 
             alt="Pt-BR"
             width={28}
-=======
-            src="/bandeira-brasil.png" 
-            alt="Bandeira do Brasil"
-            width={40}
->>>>>>> ad3543132835b4ff50d74ae7c7a88d66a04ba794
             height={28}
             className="rounded-full shadow-md"
           />
