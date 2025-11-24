@@ -36,23 +36,27 @@ function AuthNavigation() {
   return (
     <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
       
-      <div className="bg-white dark:bg-gray-900 rounded-l-full shadow-lg flex flex-col justify-center py-6 pr-12 pl-16 min-h-[120px] space-y-2">
-        <Link 
-          href="/login"
-          className={`text-lg transition-colors duration-200 ${
-            isAuthPage('/login')
-            ? 'font-bold text-purple-700 dark:text-purple-300' 
-            : 'text-gray-500 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-300'
-          }`}
-        >
-          Login
-        </Link>
-        
+     <div className="bg-white dark:bg-gray-900 rounded-l-full shadow-lg flex flex-col justify-center h-[87px] w-[301.14px] space-y-2 relative">
+        <Link 
+          href="/login"
+          className={`text-lg transition-colors duration-200 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
+            isAuthPage('/login')
+            ? 'font-bold text-purple-700 dark:text-purple-300' 
+            : 'text-gray-500 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-300'
+          }`}
+        >
+          Login
+        </Link>
+      </div>
+      
+
+
+      <div className="flex justify-center py-2">        
         <Link 
           href="/cadastro" 
           className={`text-lg transition-colors duration-200 ${
             isAuthPage('/cadastro')
-            ? 'font-bold text-purple-700 dark:text-purple-300' 
+            ? 'font-bold text-black dark:text-gray-100'
             : 'text-gray-500 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-300'
           }`}
         >
@@ -71,7 +75,7 @@ export default function AuthLayout({ children }) {
       <div 
         className="relative flex flex-1 flex-col justify-between p-8 overflow-hidden" 
         style={{ flexBasis: '45%',
-        backgroundImage: 'url("/fundo.png")', 
+        backgroundImage: 'url("SidebarEscuro.jpeg")', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'}}
