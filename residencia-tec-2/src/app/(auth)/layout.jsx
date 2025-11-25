@@ -1,131 +1,32 @@
-
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image'; 
-import { usePathname } from 'next/navigation';
-import { ThemeSwitcher } from '../components/ThemeSwitcher';
-import { useTheme } from 'next-themes';
-import { useState, useEffect } from 'react';
-
-function AuthNavigation() {
-  const pathname = usePathname();
-  const isAuthPage = (path) => pathname === path;
-
-  
-  const backButtonPages = [
-    '/recuperar-senha',
-    '/conta-criada',
-    '/sessao-encerrada'
-  ];
-  
-  if (backButtonPages.includes(pathname)) {
-    return (
-      <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
-        <div className="bg-white dark:bg-gray-900 rounded-l-full shadow-lg flex justify-center py-4 pl-12 pr-8 min-h-[80px]">
-          <Link 
-            href="/login" 
-            className="text-lg font-bold text-purple-700 dark:text-purple-200 hover:opacity-80 transition-opacity"
-          >
-            Voltar
-          </Link>
-        </div>
-      </nav>
-    );
-  }
-
- 
-  return (
-    <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
-      
-     <div className="bg-white dark:bg-gray-900 rounded-l-full shadow-lg flex flex-col justify-center h-[87px] w-[301.14px] space-y-2 relative">
-        <Link 
-          href="/login"
-          className={`text-lg transition-colors duration-200 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
-            isAuthPage('/login')
-            ? 'font-bold text-purple-700 dark:text-purple-300' 
-            : 'text-gray-500 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-300'
-          }`}
-        >
-          Login
-        </Link>
-      </div>
-      
-
-
-      <div className="flex justify-center py-2">        
-        <Link 
-          href="/cadastro" 
-          className={`text-lg transition-colors duration-200 ${
-            isAuthPage('/cadastro')
-            ? 'font-bold text-black dark:text-gray-100'
-            : 'text-gray-500 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-300'
-          }`}
-        >
-          Cadastrar
-        </Link>
-      </div>
-    </nav>
-  );
-}
+import { AuthSidebar } from '../components/AuthSidebar'; 
 
 export default function AuthLayout({ children }) {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  const backgroundImage = mounted && resolvedTheme === 'dark' 
-    ? 'url("/SidebarEscuro.jpeg")' 
-    : 'url("/SidebarClaro.svg")';
   return (
-    
-    <main className="flex min-h-screen">
-           
-      <div 
-        className="relative flex flex-1 flex-col justify-between p-8 overflow-hidden" 
-        style={{ flexBasis: '45%',
-        backgroundImage: backgroundImage, 
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'}}
-      >
-        
-        <div className="flex items-center space-x-4 z-10">
-          <ThemeSwitcher />
-          
-          <Image
-            src="/language.svg" 
-            alt="Pt-BR"
-            width={28}
-            height={28}
-            className="rounded-full shadow-md"
-          />
-        </div>
+    <main className="flex min-h-screen h-screen overflow-hidden">
             
-        <AuthNavigation /> 
       
-        <div className="absolute -bottom-16 -right-16 w-48 h-48 border-[1.5rem] border-purple-300/30 dark:border-white/5 rounded-full" />
-        <div className="absolute -bottom-8 -right-8 w-32 h-32 border-8 border-purple-300/30 dark:border-white/5 rounded-full" />
-                
-        <div className="absolute -top-16 -right-16 w-48 h-48 border-[1.5rem] border-purple-300/30 dark:border-white/5 rounded-full" />
-        
+      <div style={{ flexBasis: '45%' }} className="hidden lg:block h-full">
+        <AuthSidebar />
       </div>
       
+      
       <div 
-        className="flex flex-1 flex-col justify-center items-center p-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+        className="flex flex-1 flex-col justify-center items-center p-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-white h-full overflow-y-auto"
         style={{ flexBasis: '55%' }}
       >
         <div className="w-full max-w-sm">
         
-          <div className="mb-8 text-center">
-            <Image
+          
+          <div className="mb-8 text-center relative h-32 w-full">
+             <Image
               src="/logo.svg" 
               alt="WebPower Logo"
-              width={165} 
-              height={127}
+              fill
+
               priority
-              className="mx-auto"
             />
           </div>
           
