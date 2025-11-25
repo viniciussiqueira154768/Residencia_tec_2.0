@@ -7,6 +7,7 @@ import { AuthInput } from '../../components/AuthInput';
 import { PasswordInput } from '../../components/PasswordInput';
 import { AuthButton } from '../../components/AuthButton';
 
+
 export default function LoginPage() {
 
   const router = useRouter();
