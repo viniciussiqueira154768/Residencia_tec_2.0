@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image'; 
 import { usePathname } from 'next/navigation';
 import { ThemeSwitcher } from '../components/ThemeSwitcher';
+import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 function AuthNavigation() {
   const pathname = usePathname();
@@ -68,6 +70,14 @@ function AuthNavigation() {
 }
 
 export default function AuthLayout({ children }) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  const backgroundImage = mounted && resolvedTheme === 'dark' 
+    ? 'url("/SidebarEscuro.jpeg")' 
+    : 'url("/SidebarClaro.svg")';
   return (
     
     <main className="flex min-h-screen">
@@ -75,7 +85,7 @@ export default function AuthLayout({ children }) {
       <div 
         className="relative flex flex-1 flex-col justify-between p-8 overflow-hidden" 
         style={{ flexBasis: '45%',
-        backgroundImage: 'url("SidebarEscuro.jpeg")', 
+        backgroundImage: backgroundImage, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'}}
