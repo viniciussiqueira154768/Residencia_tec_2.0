@@ -55,8 +55,8 @@ function AuthNavigation() {
         className={`
           h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-500 z-20
           ${!isCadastro 
-            ? 'font-bold text-purple-700 dark:text-purple-300' 
-            : 'text-white/70 dark:text-gray-400 hover:text-white font-medium' 
+            ? 'font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] text-[25px]' 
+            : 'text-[#000000] dark:text-[#000000] text-[25px] font-serif font-medium' 
           }
         `}
       >
@@ -67,10 +67,10 @@ function AuthNavigation() {
       <Link 
         href="/cadastro" 
         className={`
-          h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-500 z-20
+          h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-600 z-20
           ${isCadastro 
-            ? 'font-bold text-black dark:text-gray-100' 
-            : 'text-white/70 dark:text-gray-400 hover:text-white font-medium' 
+            ? 'font-serif font-medium text-[#8C00C6] dark:text-gray-100 text-[25px]' 
+            : 'text-[#000000] dark:text-[#000000] font-serif font-medium text-[25px]' 
           }
         `}
       >

@@ -13,7 +13,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     console.log("Fazendo login...");
 
     router.push('/ponto');
@@ -23,11 +23,11 @@ export default function LoginPage() {
     <>
       <div className="w-[420px] mx-auto">
 
-        <h1 className="font-poppins font-medium text-[40px] text-center text-[#8C00C6]">
+        <h1 className="font-poppins font-medium text-4xl text-center text-[#8C00C6]">
           Seja Bem-vindo!
         </h1>
 
-        <form className="space-y-6 mt-8" onSubmit={handleLogin}>
+        <form className="space-y-6 mt-20" onSubmit={handleLogin}>
           <AuthInput
             icon={Mail}
             type="email"
@@ -44,7 +44,7 @@ export default function LoginPage() {
 
           <div className="flex items-center justify-between w-full mt-2">
 
-            <div className="flex items-center gap-1 text-[20px] font-medium text-[#5A5A5A]">
+            <div className="flex items-center gap-1 text-[19px] font-medium text-[#5A5A5A]">
               Esqueceu a senha?
               <Link
                 href="/recuperar-senha"
@@ -54,7 +54,7 @@ export default function LoginPage() {
               </Link>
             </div>
 
-            <label className="flex items-center gap-2 text-[20px] font-medium text-[#5A5A5A]">
+            <label className="flex items-center gap-1 text-[19px] font-medium text-[#5A5A5A]">
               <input
                 type="checkbox"
                 className="w-4 h-4 rounded accent-purple-600 border-gray-300"

@@ -10,29 +10,29 @@ import { AuthButton } from '../../components/AuthButton';
 export default function CadastroPage() {
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2 text-center text-gray-800 dark:text-white">
+      <h1 className="font-poppins font-normal text-4xl text-center ml-6 text-[#8C00C6]">
         Seja Bem-vindo!
       </h1>
-      <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+      <p className="font-poppins text-center text-[28px] font-medium ml-6 text-[#8C00C6] mt-10">
         Novo aqui? Cadastre-se!
       </p>
-      
-      <form className="space-y-6">
-        <AuthInput 
+
+      <form className="space-y-6 mt-20">
+        <AuthInput
           icon={User}
           type="text"
           placeholder="Nome completo"
           name="name"
         />
-        
-        <AuthInput 
+
+        <AuthInput
           icon={Mail}
           type="email"
           placeholder="E-mail"
           name="email"
         />
-        
-        <PasswordInput 
+
+        <PasswordInput
           placeholder="Senha"
           name="password"
         />
