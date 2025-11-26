@@ -126,7 +126,7 @@ Agradecimento especial aos nossos mentores que contribuíram indiretamente com f
   </div>
 </div>
 
-## Membros da equipe
+## Pessoas Desenvolvedoras do Projeto
 
 <div style="display: flex; flex-direction: row; gap: 30px; flex-wrap: wrap; justify-content: flex-start;">
 
