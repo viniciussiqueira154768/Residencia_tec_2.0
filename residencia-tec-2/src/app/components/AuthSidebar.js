@@ -117,9 +117,7 @@ export function AuthSidebar() {
           
       <AuthNavigation /> 
     
-      <div className="absolute -bottom-16 -right-16 w-48 h-48 border-[1.5rem] border-purple-300/30 dark:border-white/5 rounded-full" />
-      <div className="absolute -bottom-8 -right-8 w-32 h-32 border-8 border-purple-300/30 dark:border-white/5 rounded-full" />
-      <div className="absolute -top-16 -right-16 w-48 h-48 border-[1.5rem] border-purple-300/30 dark:border-white/5 rounded-full" />
+      
       
     </div>
   );

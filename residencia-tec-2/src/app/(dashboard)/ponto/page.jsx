@@ -121,7 +121,7 @@ export default function PontoPage() {
           onClick={() => handleRegistrarPonto('Intervalo')}
           className="flex-1 bg-gradient-to-r from-fuchsia-400 to-purple-300 hover:from-fuchsia-500 hover:to-purple-400 text-white font-bold text-lg py-4 rounded-xl shadow-md transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
         >
-          <Clock className="w-6 h-6" />
+          
           Intervalo
         </button>
       </div>
