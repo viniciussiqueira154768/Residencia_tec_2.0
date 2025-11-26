@@ -1,8 +1,6 @@
 'use client';
 
 import { User, Mail } from 'lucide-react';
-
-
 import { AuthInput } from '../../components/AuthInput';
 import { PasswordInput } from '../../components/PasswordInput';
 import { AuthButton } from '../../components/AuthButton';
@@ -10,34 +8,39 @@ import { AuthButton } from '../../components/AuthButton';
 export default function CadastroPage() {
   return (
     <>
-      <h1 className="font-poppins font-normal text-4xl text-center ml-6 text-[#8C00C6]">
-        Seja Bem-vindo!
-      </h1>
-      <p className="font-poppins text-center text-[28px] font-medium ml-6 text-[#8C00C6] mt-10">
-        Novo aqui? Cadastre-se!
-      </p>
-
-      <form className="space-y-6 mt-20">
-        <AuthInput
+      
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-purple-900 dark:text-white mb-2">
+          Seja Bem-vindo!
+        </h1>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">
+          Novo aqui? Cadastre-se!
+        </p>
+      </div>
+      
+      <form className="space-y-5">
+        <AuthInput 
           icon={User}
           type="text"
           placeholder="Nome completo"
           name="name"
         />
-
-        <AuthInput
+        
+        <AuthInput 
           icon={Mail}
           type="email"
           placeholder="E-mail"
           name="email"
         />
-
-        <PasswordInput
+        
+        <PasswordInput 
           placeholder="Senha"
           name="password"
         />
 
-        <AuthButton>Criar</AuthButton>
+        <div className="pt-2">
+            <AuthButton>Criar conta</AuthButton>
+        </div>
       </form>
     </>
   );
