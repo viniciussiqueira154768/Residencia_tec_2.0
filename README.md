@@ -114,6 +114,13 @@ Agradecimento especial aos nossos mentores que contribuíram indiretamente com f
 <div style="display: flex; flex-direction: row; gap: 30px; flex-wrap: wrap; justify-content: flex-start;">
 
   <div align="center">
+    <a href="https://www.linkedin.com/in/jose-thiago/">
+      <img loading="lazy" src="https://media.licdn.com/dms/image/v2/C4D03AQGxQFB4snYMGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605808224005?e=1766016000&v=beta&t=rCkIOapcnXkSCj28Xnsbpp_dyoV5DFFh9RJpIZFhRiY" width=115 style="border-radius: 50%;" alt="Avatar de Haida Martins">
+      <br><sub>José Thiago</sub>
+    </a>
+  </div>
+
+  <div align="center">
     <a href="https://www.linkedin.com/in/matheus-coelho005/">
       <img loading="lazy" src="https://media.licdn.com/dms/image/v2/D4D03AQFTHTziqt1LVg/profile-displayphoto-crop_800_800/B4DZm2h0LZJMAI-/0/1759703942409?e=1766016000&v=beta&t=FkvP0MpTkBu_dBEomHEie3QnDJe2IvWSIH7vkVrOFX8" width=115 style="border-radius: 50%;" alt="Matheus Coelho">
       <br><sub>Matheus Coelho</sub>
@@ -126,6 +133,7 @@ Agradecimento especial aos nossos mentores que contribuíram indiretamente com f
       <br><sub>Haida Martins</sub>
     </a>
   </div>
+  
 </div>
 
 ## Pessoas Desenvolvedoras do Projeto
@@ -179,14 +187,5 @@ Agradecimento especial aos nossos mentores que contribuíram indiretamente com f
       <br><sub>Designer</sub>
     </a>
   </div>
-
-
-  
-
-
-
-
-
 </div>
-
 
