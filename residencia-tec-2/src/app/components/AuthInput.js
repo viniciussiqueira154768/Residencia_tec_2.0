@@ -5,7 +5,8 @@ export function AuthInput({ icon: Icon, type = "text", placeholder, ...props }) 
       <input 
         type={type}
         placeholder={placeholder}
-        className="w-full bg-transparent border-b border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 py-3 pl-10 pr-4 focus:outline-none focus:border-purple-500 dark:focus:border-purple-400"
+        className="w-[420px] bg-transparent border-b border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 
+        dark:placeholder-gray-400 py-3 pl-10 pr-4 focus:outline-none focus:border-purple-500 dark:focus:border-purple-400"
         {...props}
       />
     </div>
