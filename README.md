@@ -62,13 +62,15 @@ Abra o terminal e clone o projeto:
 
 ```bash
 git clone https://github.com/viniciussiqueira154768/Residencia_tec_2.0.git
-cd Residencia_tec_2.0
+cd residencia_tec_2
 ```
 
 2. **Instalar as Dependências**
 Instale todas as bibliotecas e pacotes necessários:
 
 ```bash
+npm dev
+# ou
 npm install
 # ou
 yarn install
@@ -96,7 +98,7 @@ A aplicação deverá ser aberta automaticamente no seu navegador em **http://lo
 
 O projeto WebPower é uma Single Page Application (SPA) construída com as seguintes tecnologias no Frontend:
 
-* **Framework:** **React**
+* **Framework:** **React** e **Node.js**
 * **Linguagem:** **JavaScript** (ES6+)
 * **Estilização:** **CSS** e **Tailwind Css (Framework CSS utility-first responsável pelo design moderno e responsivo).**.
 
