@@ -1,4 +1,3 @@
-// app/components/PasswordInput.js
 'use client';
 
 import { useState } from 'react';
@@ -8,8 +7,8 @@ export function PasswordInput({ placeholder = "Senha", ...props }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="relative w-[420px] h-10">
-      <Lock size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+    <div className="relative w-[420px]">
+      <Lock size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-[#ffffff]" />
       <input 
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}

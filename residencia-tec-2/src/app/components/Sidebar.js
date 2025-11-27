@@ -79,9 +79,7 @@ export function Sidebar() {
                     transform: `translateY(${activeIndex * ITEM_HEIGHT}px)`
                 }}
             >
-                
-                
-                
+                    
                 <div className="absolute -top-5 right-0 w-5 h-5 bg-transparent rounded-br-[20px] shadow-[5px_5px_0_0_#f9fafb] dark:shadow-[5px_5px_0_0_#111827] z-10" />
                 
                 

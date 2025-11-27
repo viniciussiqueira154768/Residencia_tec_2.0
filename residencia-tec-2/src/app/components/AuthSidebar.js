@@ -19,7 +19,6 @@ function AuthNavigation() {
     '/recuperar-senha-validacao'
   ];
   
-  
   if (backButtonPages.includes(pathname)) {
     return (
       <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
@@ -39,16 +38,14 @@ function AuthNavigation() {
   return (
     <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex flex-col items-end">
       
- 
       <div 
         className={`
-          absolute right-0 bg-white dark:bg-gray-900 rounded-l-full shadow-lg 
+          absolute right-0 bg-[#ffffff] dark:bg-gray-900 rounded-l-full shadow-lg 
           h-[87px] w-[301.14px] -z-10
           transition-all duration-500 ease-in-out
           ${isCadastro ? 'translate-y-[87px]' : 'translate-y-0'} 
         `}
       />
-
       
       <Link 
         href="/login"
@@ -63,13 +60,12 @@ function AuthNavigation() {
         Login
       </Link>
 
-   
       <Link 
         href="/cadastro" 
         className={`
           h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-600 z-20
           ${isCadastro 
-            ? 'font-serif font-medium text-[#8C00C6] dark:text-gray-100 text-[25px]' 
+            ? 'font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] text-[25px]' 
             : 'text-[#000000] dark:text-[#000000] font-serif font-medium text-[25px]' 
           }
         `}
@@ -80,7 +76,6 @@ function AuthNavigation() {
   );
 }
 
-// --- Componente Principal ---
 export function AuthSidebar() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -117,8 +112,6 @@ export function AuthSidebar() {
           
       <AuthNavigation /> 
     
-      
-      
     </div>
   );
 }

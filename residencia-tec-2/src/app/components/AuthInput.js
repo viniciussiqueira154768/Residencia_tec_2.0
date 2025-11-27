@@ -1,7 +1,7 @@
 export function AuthInput({ icon: Icon, type = "text", placeholder, ...props }) {
   return (
     <div className="relative">
-      <Icon size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+      <Icon size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-[#ffffff]" />
       <input 
         type={type}
         placeholder={placeholder}

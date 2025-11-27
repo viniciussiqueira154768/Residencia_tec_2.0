@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Mail } from 'lucide-react';
@@ -21,9 +22,25 @@ export default function LoginPage() {
 
   return (
     <>
+      <Image
+        src="/curvas2.svg"
+        alt="efeito"
+        width={350} height={350}
+        className="absolute top-0 right-0 pointer-events-none"
+      />
+
+      <Image
+        src="/curvas1.svg"
+        alt="efeito"
+        width={500}
+        height={427}
+        className="absolute bottom-0 left-[-150px]"
+      />
+
       <div className="w-[420px] mx-auto">
 
-        <h1 className="font-poppins font-medium text-4xl text-center text-[#8C00C6]">
+        <h1 className="font-poppins font-medium text-4xl text-center text-[#8C00C6] 
+        dark: text-[#ffffff]">
           Seja Bem-vindo!
         </h1>
 
@@ -44,7 +61,7 @@ export default function LoginPage() {
 
           <div className="flex items-center justify-between w-full mt-2">
 
-            <div className="flex items-center gap-1 text-[19px] font-medium text-[#5A5A5A]">
+            <div className="flex items-center gap-1 text-[19px] font-medium text-[#5A5A5A] dark:text-[#ffffff]">
               Esqueceu a senha?
               <Link
                 href="/recuperar-senha"
@@ -54,7 +71,7 @@ export default function LoginPage() {
               </Link>
             </div>
 
-            <label className="flex items-center gap-1 text-[19px] font-medium text-[#5A5A5A]">
+            <label className="flex items-center gap-1 text-[19px] font-medium text-[#5A5A5A] dark:text-[#ffffff]">
               <input
                 type="checkbox"
                 className="w-4 h-4 rounded accent-purple-600 border-gray-300"
