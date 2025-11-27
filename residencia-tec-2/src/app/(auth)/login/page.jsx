@@ -39,8 +39,7 @@ export default function LoginPage() {
 
       <div className="w-[420px] mx-auto">
 
-        <h1 className="font-poppins font-medium text-4xl text-center text-[#8C00C6] 
-        dark: text-[#ffffff]">
+        <h1 className={"font-poppins font-medium text-4xl text-center text-[#8C00C6] dark: text-[#ffffff]"}>
           Seja Bem-vindo!
         </h1>
 
