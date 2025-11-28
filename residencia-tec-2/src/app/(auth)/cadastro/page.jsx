@@ -14,7 +14,7 @@ export default function CadastroPage() {
         src="/curvas3.svg"
         alt="efeito"
         width={407} height={427}
-        className="absolute top-88 right-0 pointer-events-none"
+        className="absolute top-129 right-0 pointer-events-none"
       />
 
       <Image
@@ -22,7 +22,7 @@ export default function CadastroPage() {
         alt="efeito"
         width={500}
         height={427}
-        className="absolute bottom-129 left-[-98px]"
+        className="absolute bottom-166 left-[-98px]"
       />
 
       <div className="w-[420px] max-w-full text-center">
