@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { MapPin, CheckCircle } from 'lucide-react';
+import { MapPin, CheckCircle, Clock as ClockIcon } from 'lucide-react';
 import { Clock } from '../../components/Clock';
 import dynamic from 'next/dynamic';
 
@@ -14,19 +14,18 @@ const Map = dynamic(() => import('../../components/Map'), {
 
 export default function PontoPage() {
   
+  
   const [endereco, setEndereco] = useState("Buscando endereço...");
   const [coords, setCoords] = useState(null);
   const [loadingAddress, setLoadingAddress] = useState(true);
 
-  
+ 
   const handlePositionFound = async (lat, lng) => {
     setCoords({ lat, lng });
     
     try {
-      
       const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`);
       const data = await response.json();
-      
       
       if (data && data.address) {
         const rua = data.address.road || data.address.pedestrian || "Rua desconhecida";
@@ -46,32 +45,51 @@ export default function PontoPage() {
   };
 
   
-  const handleRegistrarPonto = (tipo) => {
+  const handleRegistrarPonto = async (tipo) => {
     if (!coords) {
       alert("Aguarde o mapa localizar você antes de bater o ponto.");
       return;
     }
 
     const agora = new Date();
-    const horaFormatada = agora.toLocaleTimeString('pt-BR');
-    const dataFormatada = agora.toLocaleDateString('pt-BR');
 
-   
-    const mensagem = `
-      ✅ PONTO REGISTRADO COM SUCESSO!
-      
-      Tipo: ${tipo.toUpperCase()}
-      Hora: ${horaFormatada}
-      Data: ${dataFormatada}
-      Local: ${endereco}
-    `;
     
-    alert(mensagem);
-    console.log("Registro enviado:", { tipo, data: agora, coords, endereco });
+    const payload = {
+      tipo: tipo, 
+      data: agora.toISOString(),
+      endereco: endereco,
+      coordenadas: coords,
+      usuarioId: 1 
+    };
+
+    try {
+      
+      const response = await fetch('/api/ponto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      
+      if (response.ok) {
+        alert(`✅ ${data.mensagem}\nRecibo: ${data.recibo}`);
+      } else {
+        alert(`❌ Erro: ${data.erro}`);
+      }
+
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      alert("Erro ao conectar com o servidor.");
+    }
   };
 
   return (
     <div className="max-w-4xl mx-auto pb-10">
+      
       
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-purple-800 dark:text-purple-300">
@@ -82,20 +100,19 @@ export default function PontoPage() {
         </p>
       </div>
 
+      
       <Clock />
 
       
       <div className="mb-8 relative rounded-2xl overflow-hidden shadow-lg border-2 border-white dark:border-gray-700 h-[400px]">
         
-        
         <Map onPositionChange={handlePositionFound} />
 
-        
         <div className="absolute top-4 right-4 rounded-full border-4 border-white shadow-md overflow-hidden z-[400]">
+          
           <Image src="/avatar-john.png" alt="Avatar" width={50} height={50} />
         </div>
 
-        
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md p-3 px-6 rounded-full shadow-xl z-[400] w-max max-w-[90%] flex items-center gap-3 border border-purple-100 dark:border-gray-700">
             <div className={`w-2 h-2 rounded-full ${loadingAddress ? 'bg-yellow-400 animate-ping' : 'bg-green-500'}`}></div>
             <p className="text-purple-700 dark:text-purple-300 font-medium text-sm sm:text-base truncate flex items-center gap-2">
@@ -121,6 +138,7 @@ export default function PontoPage() {
           onClick={() => handleRegistrarPonto('Intervalo')}
           className="flex-1 bg-gradient-to-r from-fuchsia-400 to-purple-300 hover:from-fuchsia-500 hover:to-purple-400 text-white font-bold text-lg py-4 rounded-xl shadow-md transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
         >
+        
           
           Intervalo
         </button>
