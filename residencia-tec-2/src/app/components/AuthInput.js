@@ -1,3 +1,5 @@
+'use client';
+
 export function AuthInput({ icon: Icon, type = "text", placeholder, ...props }) {
   return (
     <div className="relative">
