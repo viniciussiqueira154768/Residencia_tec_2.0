@@ -10,8 +10,7 @@ import { useState, useEffect } from 'react';
 
 function AuthNavigation() {
   const pathname = usePathname();
- 
-
+  
   const backButtonPages = [
     '/recuperar-senha',
     '/conta-criada',
@@ -19,13 +18,23 @@ function AuthNavigation() {
     '/recuperar-senha-validacao'
   ];
   
+ 
   if (backButtonPages.includes(pathname)) {
     return (
-      <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
-        <div className="bg-white dark:bg-gray-900 rounded-l-full shadow-lg flex justify-center py-4 pl-12 pr-8 min-h-[80px]">
+     
+      <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-full pl-8 flex flex-col items-end">
+        
+        
+        <div 
+          className="relative bg-[#ffffff] dark:bg-gray-900 shadow-lg flex justify-center items-center rounded-l-[30px] w-[220px] h-[70px]"
+        >
+            
+           <div className="absolute -top-5 right-0 w-5 h-5 bg-transparent rounded-br-[20px] shadow-[5px_5px_0_0_#ffffff] dark:shadow-[5px_5px_0_0_#111827]" />
+           <div className="absolute -bottom-5 right-0 w-5 h-5 bg-transparent rounded-tr-[20px] shadow-[5px_-5px_0_0_#ffffff] dark:shadow-[5px_-5px_0_0_#111827]" />
+
           <Link 
             href="/login" 
-            className="text-lg font-bold text-purple-700 dark:text-purple-200 hover:opacity-80 transition-opacity"
+            className="text-lg font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] hover:opacity-80 transition-opacity"
           >
             Voltar
           </Link>
@@ -33,45 +42,59 @@ function AuthNavigation() {
       </nav>
     );
   }
+
+ 
   const isCadastro = pathname === '/cadastro';
 
   return (
-    <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex flex-col items-end">
+    <nav className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex flex-col items-end w-full pl-8">
       
-      <div 
-        className={`
-          absolute right-0 bg-[#ffffff] dark:bg-gray-900 rounded-l-full shadow-lg 
-          h-[87px] w-[301.14px] -z-10
-          transition-all duration-500 ease-in-out
-          ${isCadastro ? 'translate-y-[87px]' : 'translate-y-0'} 
-        `}
-      />
-      
-      <Link 
-        href="/login"
-        className={`
-          h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-500 z-20
-          ${!isCadastro 
-            ? 'font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] text-[25px]' 
-            : 'text-[#000000] dark:text-[#000000] text-[25px] font-serif font-medium' 
-          }
-        `}
-      >
-        Login
-      </Link>
+      <div className="relative flex flex-col items-end">
 
-      <Link 
-        href="/cadastro" 
-        className={`
-          h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-600 z-20
-          ${isCadastro 
-            ? 'font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] text-[25px]' 
-            : 'text-[#000000] dark:text-[#000000] font-serif font-medium text-[25px]' 
-          }
-        `}
-      >
-        Cadastrar
-      </Link>
+       
+        <div 
+          className={`
+            absolute right-0 bg-[#ffffff] dark:bg-gray-900 shadow-lg 
+            h-[87px] w-[301.14px] -z-10
+            transition-all duration-500 ease-in-out
+            rounded-l-[30px]
+            ${isCadastro ? 'translate-y-[87px]' : 'translate-y-0'} 
+          `}
+        >
+            
+            <div className="absolute -top-5 right-0 w-5 h-5 bg-transparent rounded-br-[20px] shadow-[5px_5px_0_0_#ffffff] dark:shadow-[5px_5px_0_0_#111827]" />
+            <div className="absolute -bottom-5 right-0 w-5 h-5 bg-transparent rounded-tr-[20px] shadow-[5px_-5px_0_0_#ffffff] dark:shadow-[5px_-5px_0_0_#111827]" />
+        </div>
+        
+        
+        <Link 
+          href="/login"
+          className={`
+            h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-500 z-20
+            ${!isCadastro 
+              ? 'font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] text-[25px]' 
+              : 'text-[#000000] dark:text-[#000000] text-[25px] font-serif font-medium' 
+            }
+          `}
+        >
+          Login
+        </Link>
+
+       
+        <Link 
+          href="/cadastro" 
+          className={`
+            h-[87px] w-[301.14px] flex items-center justify-center text-lg transition-colors duration-600 z-20
+            ${isCadastro 
+              ? 'font-serif font-medium text-[#8C00C6] dark:text-[#ffffff] text-[25px]' 
+              : 'text-[#000000] dark:text-[#000000] font-serif font-medium text-[25px]' 
+            }
+          `}
+        >
+          Cadastrar
+        </Link>
+
+      </div>
     </nav>
   );
 }

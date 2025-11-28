@@ -7,7 +7,7 @@ export async function POST(request) {
     const dados = await request.json();
     
 
-    console.log("💾 [SERVIDOR] Recebi um registro de ponto:", dados);
+    console.log(" [SERVIDOR] Recebi um registro de ponto:", dados);
 
     
     if (!dados.coordenadas && !dados.endereco) {
