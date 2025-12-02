@@ -10,7 +10,8 @@ import {
   FileText,     
   BarChart2,    
   History,      
-  Palmtree,     
+  Palmtree,
+  QrCode,     
   LogOut        
 } from 'lucide-react';
 import { ThemeSwitcher } from './ThemeSwitcher';
@@ -30,6 +31,7 @@ export function Sidebar() {
 
   const navItems = [
     { name: 'Ponto', href: '/ponto', icon: MapPin },
+    { name: 'Crachá Digital', href: '/cracha', icon: QrCode },
     { name: 'Justificativa', href: '/justificativa', icon: FileText },
     { name: 'Desempenho', href: '/desempenho', icon: BarChart2 },
     { name: 'Histórico', href: '/historico', icon: History },

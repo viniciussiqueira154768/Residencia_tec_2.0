@@ -110,7 +110,7 @@ export default function PontoPage() {
 
         <div className="absolute top-4 right-4 rounded-full border-4 border-white shadow-md overflow-hidden z-[400]">
           
-          <Image src="/avatar-john.png" alt="Avatar" width={50} height={50} />
+          <Image src="/avatar.svg" alt="Avatar" width={50} height={50} />
         </div>
 
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md p-3 px-6 rounded-full shadow-xl z-[400] w-max max-w-[90%] flex items-center gap-3 border border-purple-100 dark:border-gray-700">
